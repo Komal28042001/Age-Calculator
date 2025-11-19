@@ -8,7 +8,7 @@ A responsive **Age Calculator** web application built with HTML, CSS, and JavaSc
 
 ## Demo
 
-Add a screenshot of your app here:
+screenshot of my App
 <img width="953" height="497" alt="image" src="https://github.com/user-attachments/assets/cfd4b73b-d5e5-4272-8e97-6a8cbaa9dd22" />
 
 ## Features
