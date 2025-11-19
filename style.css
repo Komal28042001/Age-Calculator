@@ -1,0 +1,185 @@
+/* -----------------------------------------------------
+   GLOBAL
+----------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.4s ease, color 0.4s ease;
+    padding: 20px;
+}
+
+/* Light Mode */
+:root {
+    --bg: hsl(0, 0%, 94%);
+    --panel-bg: white;
+    --input-bg: white;
+    --input-border: hsl(0, 0%, 86%);
+    --label: hsl(0, 1%, 44%);
+    --purple: hsl(259, 100%, 65%);
+    --text: black;
+    --shadow: rgba(0, 0, 0, 0.06);
+}
+
+/* Dark Mode */
+.dark {
+    --bg: #1E1E1E;
+    --panel-bg: #2A2A2A;
+    --input-bg: #333;
+    --input-border: #555;
+    --label: #CCCCCC;
+    --text: #F5F5F5;
+    --shadow: rgba(255, 255, 255, 0.05);
+}
+
+/* -----------------------------------------------------
+   LAYOUT
+----------------------------------------------------- */
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.theme-btn {
+    background: var(--panel-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s ease;
+}
+
+.theme-btn:hover {
+    background: var(--purple);
+    color: white;
+}
+
+.layout {
+    display: flex;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* -----------------------------------------------------
+   LEFT PANEL
+----------------------------------------------------- */
+.left-panel {
+    background: var(--panel-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 4px 10px var(--shadow);
+}
+
+.input-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.field label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--label);
+    letter-spacing: 2px;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.field input {
+    width: 100%;
+    margin-top: 5px;
+    padding: 12px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    background: var(--input-bg);
+    color: var(--text);
+    transition: all 0.3s ease;
+}
+
+/* Animation B – input focus */
+.field input:focus {
+    outline: none;
+    border-color: var(--purple);
+    box-shadow: 0 0 8px hsla(259, 100%, 65%, 0.5);
+}
+
+/* Divider + button */
+.divider {
+    margin: 2rem 0;
+    position: relative;
+    border-top: 1px solid var(--input-border);
+}
+
+.circle-btn {
+    width: 70px;
+    height: 70px;
+    background: var(--purple);
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    top: -35px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.circle-btn:hover {
+    background: black;
+}
+
+/* -----------------------------------------------------
+   RIGHT PANEL
+----------------------------------------------------- */
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-panel p {
+    font-size: 4rem;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 4rem;
+}
+
+.highlight {
+    color: var(--purple);
+}
+
+/* -----------------------------------------------------
+   MOBILE RESPONSIVE
+----------------------------------------------------- */
+@media (max-width: 860px) {
+    .layout {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .right-panel p {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .right-panel p {
+        font-size: 2.4rem;
+        line-height: 3rem;
+    }
+}
